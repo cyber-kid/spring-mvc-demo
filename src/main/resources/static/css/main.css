@@ -1,0 +1,35 @@
+#main-container {
+    width: 100%;
+    flex-grow: 1;
+    align-self: center;
+    margin: 5px 5px;
+    display: flex;
+}
+
+.main-menu {
+    display: flex;
+    flex: 0 0 250px;
+    margin: 0 5px;
+    justify-content: center;
+}
+
+#main-text {
+    display: flex;
+    flex: 1 1 auto;
+    border: 1px #ccc solid;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-radius: 3px;
+    flex-direction: column;
+}
+
+#main-text form {
+    display: flex;
+    flex-direction: column;
+}
+
+.submit-button {
+    width: 60px;
+    margin: 10px 0;
+}

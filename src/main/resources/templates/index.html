@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Spring MVC Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+</head>
+<body>
+    <div th:replace="~{fragments :: header}"></div>
+    <div id="main-container">
+        <div th:replace="~{fragments :: menu}"></div>
+        <div id="main-text">
+            <p>Hello world!</p>
+            <p th:if="${email != null}"  th:text="'User e-mail is: ' + ${email}"></p>
+        </div>
+        <div th:replace="~{fragments :: some-info}"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring MVC Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <div id="header-container" th:fragment="header">
+        <div id="header-logo">Logo</div>
+        <div id="header-register">
+            <div class="header-button">
+                <a href="/login">Log in</a>
+            </div>
+            <div class="header-button">
+                <a href="/register">Register</a>
+            </div>
+        </div>
+    </div>
+    <div class="main-menu" th:fragment="menu">
+        <p>Menu</p>
+    </div>
+    <div class="main-menu" th:fragment="some-info">
+        <p>Some info</p>
+    </div>
+</body>
+</html>
