@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring MVC Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+</head>
+<body>
+    <div th:replace="~{fragments :: header}"></div>
+
+    <div id="main-container">
+        <div th:replace="~{fragments :: menu}"></div>
+        <div id="main-text">
+            <p>Change password</p>
+            <form action="#" th:action="@{/change-passwd}" th:object="${resetPasswordDto}" method="post">
+
+                <label>Old password: <input type="password" th:field="*{oldPasswd}" /></label>
+                <div class="error" th:if="${#fields.hasErrors('oldPasswd')}" th:errors="*{oldPasswd}"></div>
+                <div th:if="${wrongOldPassd != null}" th:text="${wrongOldPassd}" class="error"></div>
+
+                <label>New password: <input type="password" th:field="*{newPasswd}" /></label>
+                <div class="error" th:if="${#fields.hasErrors('newPasswd')}" th:errors="*{newPasswd}"></div>
+
+                <label>Confirm password: <input type="password" th:field="*{confirmPasswd}" /></label>
+                <div th:if="${wrongConfirmPasswd != null}" th:text="${wrongConfirmPasswd}" class="error"></div>
+                <div class="error" th:if="${#fields.hasErrors('confirmPasswd')}" th:errors="*{confirmPasswd}"></div>
+
+                <input class="submit-button" type="submit" value="Change" />
+            </form>
+        </div>
+        <div th:replace="~{fragments :: some-info}"></div>
+    </div>
+</body>
+</html>

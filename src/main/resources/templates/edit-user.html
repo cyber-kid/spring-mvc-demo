@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head> 
+<head>
     <title>Spring MVC Demo</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
@@ -8,13 +8,13 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
 </head>
 <body>
-    <div th:replace="~{fragments :: header}"></div>
+<div th:replace="~{fragments :: header}"></div>
 
     <div id="main-container">
         <div th:replace="~{fragments :: menu}"></div>
         <div id="main-text">
-            <p>Register a new account</p>
-            <form th:action="@{/register}" th:object="${user}" method="post">
+            <p>Edit your account</p>
+            <form action="#" th:action="@{/edit-user}" th:object="${user}" method="post">
 
                 <label>First name: <input type="text" th:field="*{firstName}" /></label>
                 <div class="error" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
@@ -24,7 +24,7 @@
 
                 <label>E-mail: <input type="text" th:field="*{email}" /></label>
                 <div class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
-                <div class="error" th:if="${duplicatedEmail != null}" th:text="${duplicatedEmail}"></div>
+                <div th:if="${duplicatedEmail != null}" th:text="${duplicatedEmail}" class="error"></div>
 
                 <label>Date of birth: <input type="date" th:field="*{dob}" /></label>
                 <div class="error" th:if="${#fields.hasErrors('dob')}" th:errors="*{dob}"></div>
@@ -35,14 +35,7 @@
                         <option value="FEMALE">Female</option>
                     </select>
                 </label>
-
-                <label>Password: <input type="password" th:field="*{passwd}" /></label>
-                <div class="error" th:if="${#fields.hasErrors('passwd')}" th:errors="*{passwd}"></div>
-
-                <label>Confirm password: <input type="password" th:field="*{confirmPasswd}" /></label>
-                <div class="error" th:if="${#fields.hasErrors('confirmPasswd')}" th:errors="*{confirmPasswd}"></div>
-                <div class="error" th:if="${wrongConfirmPasswd != null}" th:text="${wrongConfirmPasswd}"></div>
-                <input class="submit-button" type="submit" value="Submit" />
+                <input class="submit-button" type="submit" value="Update" />
             </form>
         </div>
         <div th:replace="~{fragments :: some-info}"></div>

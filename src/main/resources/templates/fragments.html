@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Spring MVC Demo</title>
@@ -5,8 +6,8 @@
 </head>
 <body>
     <div id="header-container" th:fragment="header">
-        <div id="header-logo">Logo</div>
-        <div id="header-register">
+        <a href="/" id="header-logo">Spring MVC Demo</a>
+        <div class="header-register" sec:authorize="!isAuthenticated()">
             <div class="header-button">
                 <a href="/login">Log in</a>
             </div>
@@ -14,9 +15,34 @@
                 <a href="/register">Register</a>
             </div>
         </div>
+        <div class="header-register" sec:authorize="isAuthenticated()">
+            <div class="header-button">
+                <a href="/user-info" sec:authentication="name"></a>
+            </div>
+            <div class="header-button">
+                <a href="/logout">Log out</a>
+            </div>
+        </div>
     </div>
     <div class="main-menu" th:fragment="menu">
         <p>Menu</p>
+        <ul>
+            <li>
+                <a href="/">Main</a>
+            </li>
+            <li sec:authorize="isAuthenticated()">
+                <a href="/user-info">Profile</a>
+            </li>
+            <li sec:authorize="hasRole('ROLE_ADMIN')">
+                <a href="/admin">Admin</a>
+            </li>
+            <li sec:authorize="isAuthenticated()">
+                <a href="/change-passwd">Change password</a>
+            </li>
+            <li sec:authorize="isAuthenticated()">
+                <a href="/logout">Log out</a>
+            </li>
+        </ul>
     </div>
     <div class="main-menu" th:fragment="some-info">
         <p>Some info</p>

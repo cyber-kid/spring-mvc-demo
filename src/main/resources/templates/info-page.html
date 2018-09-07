@@ -12,12 +12,7 @@
 <div id="main-container">
     <div th:replace="~{fragments :: menu}"></div>
     <div id="main-text">
-        <p>You registered a new user with following details:</p>
-        <p th:text= "'First name: ' + ${user.firstName}"></p>
-        <p th:text= "'Last name: ' + ${user.lastName}"></p>
-        <p th:text= "'E-mail: ' + ${user.email}"></p>
-        <p th:text= "'Gender: ' + ${user.gender}"></p>
-        <!--<p th:text= "'Date of birth: ' + ${user.dob}"></p>-->
+        <p th:utext="${message}"></p>
     </div>
     <div th:replace="~{fragments :: some-info}"></div>
 </div>

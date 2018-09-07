@@ -9,19 +9,10 @@
 </head>
 <body>
 <div th:replace="~{fragments :: header}"></div>
-
 <div id="main-container">
     <div th:replace="~{fragments :: menu}"></div>
     <div id="main-text">
-        <p>Log in with an existing account</p>
-        <form action="#" th:action="@{/login}" method="post">
-            <label>E-mail: <input type="text" th:name="username" /></label>
-            <label>Password: <input type="password" th:name="password" /></label>
-            <div th:if="${error != null}" th:utext="${error}" class="error"></div>
-            <label id="remeber-me"><input type="checkbox" name="remember-me" />remeber me</label>
-            <a href="/reset-passwd">Forgot your password?</a>
-            <input class="submit-button" type="submit" value="Submit" />
-        </form>
+        <p>Welcome Admin!</p>
     </div>
     <div th:replace="~{fragments :: some-info}"></div>
 </div>
