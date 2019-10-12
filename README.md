@@ -8,14 +8,14 @@ In this section I will describe how to build and run the project. This section c
   3. [Start and Stop](#start-stop);
   3. [Clean up](#clean-up);
 
-#### <a name="prerequisites" /> Prerequisites
+## <a name="prerequisites" /> Prerequisites
 Yuo should have:
 - docker installed and running. Please, see details [for Windows](https://docs.docker.com/docker-for-windows/install/), [for Mac](https://docs.docker.com/docker-for-mac/install/);
 - git installed and running. Please, see details [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git);
 - command line interface;
 
 All commands were created and tested on Unix machine. Details for Windows machines will be provided as comments.
-#### <a name="clone" /> Cloning the project
+## <a name="clone" /> Cloning the project
 To clone the project run:
 ```
 https://github.com/cyber-kid/spring-mvc-demo.git
