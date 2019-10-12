@@ -6,7 +6,7 @@
     <groupId>com.home</groupId>
     <artifactId>spring-mvc-demo</artifactId>
     <version>0.2.0</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
