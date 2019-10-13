@@ -24,7 +24,7 @@ services:
     networks:
       local-network:
         aliases:
-          - app_mailhog
+          - app-mailhog
 
   db:
     container_name: app_mysql
@@ -41,7 +41,7 @@ services:
     networks:
       local-network:
         aliases:
-          - app_mysql
+          - app-mysql
 
 networks:
   local-network:

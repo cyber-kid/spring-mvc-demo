@@ -51,3 +51,18 @@ docker-compose down
 ```
 ## Contributing
 If you found a bug, have any suggestions or questions feel free to create an issue or pull a request.
+
+## Kubernetes Notes
+Create config maps:
+kubectl create configmap spring-config --from-file=env/docker/application.properties
+kubectl create configmap init-db --from-file=sql/run_1.sql
+
+Create all:
+kubectl apply -f k8s/spring_mvc_demo.yml
+
+All apps are exposed through NodePort service.
+
+Clean up:
+kubectl delete -f k8s/spring_mvc_demo.yml
+kubectl delete cm init-db
+kubectl delete cm spring-config

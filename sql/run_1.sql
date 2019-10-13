@@ -42,3 +42,10 @@ CREATE TABLE verification_tokens
    FOREIGN KEY (USER_ID) REFERENCES users (ID),
    PRIMARY KEY (ID)
 );
+
+INSERT INTO id_gen (GEN_NAME, GEN_VAL) VALUES ('userId', 0);
+INSERT INTO id_gen (GEN_NAME, GEN_VAL) VALUES ('roleId', 2);
+INSERT INTO id_gen (GEN_NAME, GEN_VAL) VALUES ('tokenId', 0);
+
+INSERT INTO roles (ID, ROLE) VALUES (1, 'ROLE_ADMIN');
+INSERT INTO roles (ID, ROLE) VALUES (2, 'ROLE_USER');
